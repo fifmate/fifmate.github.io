@@ -1,4 +1,4 @@
-515mate.github.io
+fifmate.github.io
 =================
 
-officila site for 515mate
+officila site for fifmate, which stands for 515 room mates
