@@ -2,8 +2,25 @@
 html,
 body {
   margin: 0;
+  font-family: 'Avenir' 'ST Heiti' 'Microsoft Yahei';
 }
-/* line 6, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/layout.less */
+/* line 10, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/layout.less */
 * {
   box-sizing: border-box;
+}
+/* line 13, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/layout.less */
+.cover {
+  height: 700px;
+  padding: 1em 0;
+  color: #fff;
+  text-align: center;
+  background-image: url('../../img/cover.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
+}
+/* line 24, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/layout.less */
+.cover .slogan {
+  font-size: 4em;
+  text-transform: capitalize;
+  font-weight: normal;
 }

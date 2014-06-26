@@ -14,7 +14,7 @@ var config = {
     src: 'jade/**/*',
     dest: './',
     watch: 'jade/**/*',
-    lr: '*.html',
+    lr: './*.html',
     param: {}
   },
   less: {
