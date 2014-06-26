@@ -1,0 +1,9 @@
+/* line 2, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/layout.less */
+html,
+body {
+  margin: 0;
+}
+/* line 6, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/layout.less */
+* {
+  box-sizing: border-box;
+}
