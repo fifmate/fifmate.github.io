@@ -24,3 +24,49 @@ body {
   text-transform: capitalize;
   font-weight: normal;
 }
+/* line 32, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/layout.less */
+.fix-flt:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+/* line 1, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/mate-list.less */
+.mate-list {
+  list-style: none;
+  margin-bottom: 2em;
+}
+/* line 5, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/mate-list.less */
+.mate-list .mate-item {
+  float: left;
+  width: 30%;
+  margin-left: 3%;
+  padding: 1em;
+  cursor: pointer;
+  background-color: #eee;
+}
+/* line 13, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/mate-list.less */
+.mate-list .mate-item:first {
+  margin-left: 0;
+}
+/* line 1, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/pop-card.less */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  overflow: hidden;
+}
+/* line 9, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/pop-card.less */
+.modal .bg-layer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+/* line 16, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/pop-card.less */
+.modal .modal-content {
+  top: 50%;
+  left: 50%;
+}

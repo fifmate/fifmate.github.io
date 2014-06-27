@@ -27,3 +27,14 @@ html, body{
     font-weight: normal;
   }
 }
+
+.fix-flt{
+  &:after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@import "./mate-list.less";
+@import "./pop-card.less";

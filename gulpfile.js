@@ -11,7 +11,7 @@ var liveReload = require('gulp-livereload')
 
 var config = {
   jade: {
-    src: 'jade/**/*',
+    src: 'jade/*.jade',
     dest: './',
     watch: 'jade/**/*',
     lr: './*.html',
@@ -60,7 +60,7 @@ for(var task in config){
 };
 
 gulp.task('watch', function(){
-  var LR = liveReload()
+  var LR = liveReload(9904)
 
 
   for(var task in config){
