@@ -1,13 +1,18 @@
 var gulp = require('gulp')
 
-var less = require('gulp-less')
-var jade = require('gulp-jade')
-var coffee = require('gulp-coffee')
-
 
 var gutil = require('gulp-util')
 var plumber = require('gulp-plumber')
 var liveReload = require('gulp-livereload')
+
+var plugins = ['less', 'jade', 'coffee', 'react'];
+
+var gplugin = {};
+for( var i in plugins ){
+  var p = plugins[i];
+  gplugin[p] = require('gulp-'+p);
+}
+
 
 var config = {
   jade: {
@@ -23,14 +28,20 @@ var config = {
     watch: 'layout/less/**/*',
     lr: 'layout/css/*.css',
     param: {dumpLineNumbers: 'comments'}
-  }
-  // coffee: {
-
+  },
   // }
-}
-var gplugin = {
-  jade: jade,
-  less: less
+  coffee: {
+    src: 'coffee/**/*',
+    dest: 'lib',
+    watch: 'coffee/**/*',
+    param: {}
+  },
+  react: {
+    src: 'lib/jsx/**/*.js',
+    dest: 'lib/',
+    watch: 'lib/jsx/**/*.js',
+    param: {}
+  }
 }
 
 
@@ -62,7 +73,6 @@ for(var task in config){
 gulp.task('watch', function(){
   var LR = liveReload(9904)
 
-
   for(var task in config){
     if( config[task].watch ){
       gulp.watch(config[task].watch, [task])
@@ -77,4 +87,15 @@ gulp.task('watch', function(){
 gulp.task('default', allTask);
 
 gulp.task('wd', allTask.concat(['watch']));
+
+
+
+
+
+
+gulp.task('test', ['tt']);
+
+gulp.task('tt', function(){
+  
+});
 

@@ -1,72 +1,180 @@
 /* line 2, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/layout.less */
 html,
 body {
-  margin: 0;
   font-family: 'Avenir' 'ST Heiti' 'Microsoft Yahei';
 }
-/* line 10, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/layout.less */
-* {
-  box-sizing: border-box;
-}
-/* line 13, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/layout.less */
+/* line 9, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/layout.less */
 .cover {
-  height: 700px;
+  height: 500px;
   padding: 1em 0;
   color: #fff;
   text-align: center;
-  background-image: url('../../img/cover.jpg');
   background-size: cover;
   background-position: 50% 50%;
+  background-color: #fff;
 }
-/* line 24, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/layout.less */
+/* line 22, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/layout.less */
 .cover .slogan {
+  display: inline-block;
+  padding: 0.25em 1.5em;
+  background-color: rgba(255, 255, 255, 0.2);
   font-size: 4em;
   text-transform: capitalize;
   font-weight: normal;
 }
-/* line 32, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/layout.less */
+/* line 33, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/layout.less */
 .fix-flt:after {
   content: '';
   display: table;
   clear: both;
 }
+/* line 42, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/layout.less */
+.dress {
+  position: relative;
+  overflow-x: hidden;
+}
+/* line 46, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/layout.less */
+.dress:before,
+.dress:after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 0;
+  bottom: 0;
+  border: 3em solid transparent;
+  border-bottom-color: #fff;
+}
+/* line 57, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/layout.less */
+.dress:before {
+  left: 0;
+  margin-left: -6em;
+}
+/* line 61, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/layout.less */
+.dress:after {
+  right: 0;
+  margin-right: -6em;
+}
+/* line 1, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/morphing.less */
+.morphing-entry {
+  cursor: pointer;
+}
+/* line 4, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/morphing.less */
+.morphing-entry.active * {
+  /*transition: all ease 100ms;*/
+  opacity: 0;
+}
+/* line 11, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/morphing.less */
+.morphing-modal {
+  position: fixed;
+  width: 100%;
+  height: 0px;
+  top: 0;
+  bottom: 100%;
+  overflow: hidden;
+  -webkit-transition: height 0ms linear 450ms, bottom 0ms linear 450ms;
+  -moz-transition: height 0ms linear 450ms, bottom 0ms linear 450ms;
+  -ms-transition: height 0ms linear 450ms, bottom 0ms linear 450ms;
+  -o-transition: height 0ms linear 450ms, bottom 0ms linear 450ms;
+  transition: height 0ms linear 450ms, bottom 0ms linear 450ms;
+}
+/* line 21, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/morphing.less */
+.morphing-modal .modal-bg,
+.morphing-modal .modal-content {
+  opacity: 0;
+}
+/* line 26, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/morphing.less */
+.morphing-modal .modal-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.375);
+  z-index: 100;
+  transform: translateZ(0);
+  transition: all 150ms linear;
+}
+/* line 39, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/morphing.less */
+.morphing-modal .modal-content {
+  position: absolute;
+  background-color: #fff;
+  z-index: 200;
+  transform: translateZ(0);
+}
+/* line 45, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/morphing.less */
+.morphing-modal .modal-content .modal-close {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  top: 0.5em;
+  right: 0.5em;
+  background-color: red;
+  z-index: 300;
+  cursor: pointer;
+}
+/* line 59, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/morphing.less */
+.morphing-modal.active {
+  bottom: 0;
+  height: 100%;
+  transition: height 0ms linear, bottom 0ms linear;
+}
+/* line 65, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/morphing.less */
+.morphing-modal.active .modal-bg {
+  opacity: 1;
+}
+/* line 71, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/morphing.less */
+.morphing-modal.active .modal-content {
+  opacity: 1;
+  transition: all cubic-bezier(0.7, 0, 0.3, 1) 400ms;
+}
 /* line 1, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/mate-list.less */
 .mate-list {
   list-style: none;
+  width: 80%;
+  padding: 0;
+  margin: 0 auto;
   margin-bottom: 2em;
 }
-/* line 5, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/mate-list.less */
+/* line 8, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/mate-list.less */
 .mate-list .mate-item {
   float: left;
   width: 30%;
-  margin-left: 3%;
+  margin-left: 5%;
   padding: 1em;
   cursor: pointer;
   background-color: #eee;
 }
-/* line 13, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/mate-list.less */
-.mate-list .mate-item:first {
+/* line 16, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/mate-list.less */
+.mate-list .mate-item:first-child {
   margin-left: 0;
 }
 /* line 1, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/pop-card.less */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 0;
-  overflow: hidden;
+#card-content {
+  height: 100%;
 }
-/* line 9, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/pop-card.less */
-.modal .bg-layer {
+/* line 5, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/pop-card.less */
+.card-com,
+.card-cover {
+  height: 100%;
+}
+/* line 8, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/pop-card.less */
+.card-cover {
+  background-size: cover;
+  background-position: 50% 50%;
+}
+/* line 13, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/pop-card.less */
+.modal-bg {
+  background-size: cover;
+  background-position: 50% 50%;
+}
+/* line 19, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/pop-card.less */
+#cover-img-placeholder {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  top: -5000px;
+  left: -5000px;
+  z-index: -10;
 }
-/* line 16, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/pop-card.less */
-.modal .modal-content {
-  top: 50%;
-  left: 50%;
+/* line 26, /Users/chenllos/Documents/dev/fifmate.github.io/layout/less/pop-card.less */
+#cache {
+  display: none;
 }

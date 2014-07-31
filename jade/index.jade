@@ -3,14 +3,27 @@ html
   head
     meta(charset="utf-8")
     title fifmate, 515 forever friend
+    link(href="layout/css/layout-base.css", type="text/css", rel="stylesheet")
     link(href="layout/css/layout.css", type="text/css", rel="stylesheet")
-  
   body
-    div.cover
+    div.cover.dress
       h1.slogan 515 mates
     p come on, Everybody.
 
     include partial/mate-list
+    include partial/pop-morphing
+
+    #cache
+    
+    script(src="lib/vendor/jquery-1.8.3.js")
+    script(src="lib/vendor/glfx.js")
+    //- script(src="lib/vendor/react.min.js")
+    script(src="lib/vendor/react.js")
+    script(src="lib/morphing.js")
+    //- script(type="text/jsx" src="lib/page.js")
+    script(src="lib/page.js")
+    script(src="lib/data.js")
+    script(type="text/javascript" src="lib/cardRender.js")
     
   
   //- script(src="http://127.0.0.1:5150/livereload.js?ext=Chrome&extver=2.0.9")

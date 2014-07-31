@@ -1,9 +1,13 @@
-ul.mate-list.fix-flt
-  li.mate-item teamrun
-  li.mate-item Rtwo91
-  li.mate-item Bro Spring
+mixin matItem(name)
+    li.mate-item.morphing-entry(data-id=name, data-mm="card")
+      span.mate-name=name
+
+
 
 ul.mate-list.fix-flt
-  li.mate-item Bro Hao
-  li.mate-item Bro Bird
-  li.mate-item Flowers Bed
+  each name in ['chenllos', 'rtwo91', 'bro Spring']
+    +matItem(name)
+
+ul.mate-list.fix-flt
+  each name in ['bro Hao', 'bro Bird', 'flowers Bed']
+    +matItem(name)
